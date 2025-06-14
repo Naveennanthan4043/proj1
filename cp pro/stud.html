@@ -1,0 +1,232 @@
+
+    
+    <!DOCTYPE html>
+    <html lang="en">
+      <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="col.css" />
+        <link
+          rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+        />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link rel="stylesheet" href="studentlogin.php" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+          rel="stylesheet"
+        />
+        <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+        <title>Document</title>
+      </head>
+            <body style="background-color: #030127;">
+      <header>
+        <div id="main-header-conte">
+          <img id="logo" src="logot.jpg" alt="logo" />
+          <nav class="nav-links">
+            <ul>
+             
+              <li>Support</li>
+              <li>Contact</li>
+            </ul>
+          </nav>
+          <div class="header-buttons">
+            <button style="border-radius: 12px;">logout</button>
+          </div>
+        </div>
+      </header>
+
+      <section id="program-section"    style=" background-color: #030127;">
+        <h1 class="title" style="color: rgb(255, 255, 255);">MBA Academic Programs</h1>
+
+         <div class="card-container">
+          <div class="program-card">
+            <h2 onclick="openTaask()" >MBA.HR</h2>
+            <p>4-Year Undergraduate Program in Agricultural Sciences.</p>
+          </div>
+
+          <div class="program-card">
+            <h2>MBA.Finance</h2>
+            <p>2-Year Postgraduate Program with specializations.</p>
+          </div>
+          <div class="program-card">
+            <h2>MBA.Business Analactics</h2>
+            <p>Doctoral research in agricultural disciplines.</p>
+          </div>
+          <div class="program-card">
+            <h2>MBA.Logistics And Oparation</h2>
+            <p>Doctoral research in agricultural disciplines.</p>
+          </div>
+          <div class="program-card">
+            <h2>MBA.Marketing</h2>
+            <p>2-Year diploma for field-based agri education.</p>
+          </div>
+        </div>
+      </section>
+
+<section>
+<div id="test">
+  <h1 id="new" style="color: white;">Complete Your Daily Test Tasks</h1>
+  <div class="grid" id="taskGrid"></div>
+</div>
+
+<!-- Quiz Page -->
+<div id="quizSection" style="display:none; color: white;">
+  <h1 id="quizTitle">Test Page - 30 Questions</h1>
+  <form id="quiz-form">
+    <div id="quiz-container"></div>
+    <button type="submit">Submit Answers</button>
+  </form>
+  <div id="result"></div>
+</div>
+
+  
+</section>
+
+
+
+
+
+
+
+   
+
+      <footer>
+        <h1 style="font-size: 15px;padding: 5px;">Designed By infolexus solution</h1>
+      </footer>
+
+       
+
+<script>
+const TOTAL_TASKS = 30;
+const ONE_DAY_MS = 24 * 60 * 60 * 1000;
+
+const taskGrid = document.getElementById("taskGrid");
+const quizSection = document.getElementById("quizSection");
+const testSection = document.getElementById("test");
+const quizContainer = document.getElementById("quiz-container");
+const quizForm = document.getElementById("quiz-form");
+const quizTitle = document.getElementById("quizTitle");
+const resultDiv = document.getElementById("result");
+
+let currentTask = getCurrentTaskIndex();
+
+// Generate task cards
+for (let i = 1; i <= TOTAL_TASKS; i++) {
+  const card = document.createElement("div");
+  card.className = "card";
+  card.textContent = `Task ${i}`;
+
+  if (i > currentTask + 1) {
+    card.classList.add("locked");
+  } else {
+    card.addEventListener("click", () => openTask(i));
+  }
+
+  taskGrid.appendChild(card);
+}
+
+// Sample question set
+const baseQuestions = [
+  {
+    question: "What is the capital of France?",
+    options: ["Berlin", "London", "Paris", "Madrid"],
+    answer: "Paris"
+  },
+  {
+    question: "2 + 2 = ?",
+    options: ["3", "4", "5", "6"],
+    answer: "4"
+  }
+];
+
+// Fill to 30 questions
+while (baseQuestions.length < 30) {
+  baseQuestions.push({ ...baseQuestions[baseQuestions.length % 2] });
+}
+
+function openTask(taskNumber) {
+  testSection.style.display = "none";
+  quizSection.style.display = "block";
+  quizTitle.textContent = `Task ${taskNumber} - Quiz`;
+
+  quizContainer.innerHTML = "";
+
+  baseQuestions.forEach((q, index) => {
+    const qDiv = document.createElement("div");
+    qDiv.innerHTML = `<p><strong>Q${index + 1}:</strong> ${q.question}</p>`;
+
+    q.options.forEach((opt, i) => {
+      const id = `q${index}_opt${i}`;
+      qDiv.innerHTML += `
+        <label>
+          <input type="radio" name="q${index}" value="${opt}" id="${id}"> ${opt}
+        </label><br/>
+      `;
+    });
+
+    quizContainer.appendChild(qDiv);
+  });
+
+  quizForm.onsubmit = (e) => {
+    e.preventDefault();
+    let score = 0;
+
+    baseQuestions.forEach((q, i) => {
+      const selected = document.querySelector(`input[name="q${i}"]:checked`);
+      if (selected && selected.value === q.answer) score++;
+    });
+
+    resultDiv.innerText = `✅ You scored ${score} out of 30.`;
+    saveTaskProgress(taskNumber);
+    setTimeout(() => window.location.reload(), 1500);
+  };
+}
+
+// Save task progress with timestamp
+function saveTaskProgress(taskNumber) {
+  const data = {
+    lastTask: taskNumber,
+    lastCompletedAt: new Date().toISOString()
+  };
+  localStorage.setItem("taskProgress", JSON.stringify(data));
+}
+
+// Get which task should be active
+function getCurrentTaskIndex() {
+  const saved = JSON.parse(localStorage.getItem("taskProgress"));
+  if (!saved || !saved.lastCompletedAt) return 0;
+
+  const lastTime = new Date(saved.lastCompletedAt);
+  const now = new Date();
+  const diff = now - lastTime;
+
+  if (diff >= ONE_DAY_MS) {
+    return Math.min(saved.lastTask, TOTAL_TASKS - 1) + 1;
+  } else {
+    return saved.lastTask;
+  }
+}
+
+
+
+
+
+          
+        var a = document.getElementById("test");
+        var b = document.getElementById("program-section");
+
+        function openTaask() {
+          a.style.display = "block";
+          b.style.display = "none";
+        }
+          </script>
+    
+            
+          </body>
+ </head>
+</html>

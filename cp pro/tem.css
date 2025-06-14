@@ -1,0 +1,270 @@
+* {
+    padding: 0px;
+    margin: 0px;
+}
+
+section {
+    font-family: Arial, sans-serif;
+    background: #f0f0f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+}
+
+header {
+    background-color: #030127;
+    /* optional background */
+    padding: 15px 15px;
+}
+
+
+#wel-ad {
+    width: 100%;
+    overflow: hidden;
+    background-color: #030127;
+
+    font-family: Arial, sans-serif;
+    color: white;
+    height: 40px;
+    position: relative;
+}
+
+#wel-ad h1 {
+    white-space: nowrap;
+    display: inline-block;
+    font-size: 1rem;
+    padding-left: 100%;
+    animation: scrollText 10s linear infinite;
+}
+
+@keyframes scrollText {
+    0% {
+        transform: translateX(0%);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+#main-header-conte {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: small;
+    height: 50px;
+    color: rgb(0, 0, 0);
+    font-family: sans-serif;
+}
+
+#main-header-conte img {
+    width: 280px;
+    padding-bottom: 6px;
+    background-size: cover;
+}
+
+#logo img {
+    height: 100px;
+    /* Controls logo height */
+    width: auto;
+    /* Keeps the aspect ratio */
+    max-width: 100%;
+    /* Prevents overflow on small screens */
+    object-fit: contain;
+    /* Keeps image contained */
+}
+
+.nav-links ul {
+    display: flex;
+    list-style: none;
+    padding-top: 15px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 26px;
+    gap: 30px;
+    margin-left: 46pc;
+    color: #ffffff;
+
+}
+
+.nav-links li {
+    cursor: pointer;
+}
+
+.header-buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+button {
+    padding: 8px 15px 5px 15px;
+    margin-right: 20px;
+    cursor: pointer;
+    border-radius: 10px;
+    background-color: #0077cc;
+    border: none;
+}
+
+.ap button {
+    background-color: #0077cc;
+    border-color: #0077cc;
+    padding: 5px;
+
+    color: white;
+}
+
+
+
+
+.circle-container {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    min-height: fit-content;
+    margin-left: 6pc;
+}
+
+.circle {
+    width: 250%;
+    height: 250%;
+    border-radius: 50%;
+    background: conic-gradient(#001a8d 0%,
+            #000356 var(--progress, 0%),
+            #000110 var(--progress, 0%));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.percentage {
+    font-size: 2em;
+    font-weight: bold;
+    color: #ffffff;
+    position: absolute;
+}
+
+#program-section {
+    max-width: 1200px;
+    margin: 0 auto;
+
+    padding: 40px 20px;
+    background-color: #fff;
+    margin-top: 0px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.title {
+    text-align: center;
+    margin-top: 0pc;
+    margin-left: 160px;
+    margin-bottom: 40px;
+    font-size: 2em;
+    margin-bottom: 30px;
+    color: #fd5000;
+}
+
+.card-container {
+    /* display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); */
+    display: flex;
+    flex-direction: column;
+
+    margin-top: 0px;
+    margin-left: 15pc;
+    flex-wrap: wrap;
+    width: 40pc;
+    height: 400px;
+    gap: 20px;
+}
+
+.program-card {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.program-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.program-card h2 {
+    font-size: 20px;
+    color: #0077cc;
+    margin-bottom: 10px;
+}
+
+.program-card p {
+    font-size: 14px;
+    color: #555;
+    line-height: 1.5;
+}
+
+
+
+
+#new {
+    margin-top: 40px;
+    margin-bottom: 50px;
+    text-align: center;
+    color: #000000;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    max-width: 1000px;
+    margin: 20px auto;
+}
+
+.card {
+    background-color: rgb(205, 205, 205);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.card label {
+    font-size: 16px;
+    color: #333;
+}
+
+.card input[type="checkbox"] {
+    transform: scale(1.2);
+}
+
+.apv button {
+    display: block;
+    margin-left: 60px;
+    padding: 12px 25px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: white;
+
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+#apv button:hover {
+    background-color: #0056b3;
+    border-color: #007bff;
+
+}
+
+.message {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
+}
+

@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Login</title>
+    <link rel="stylesheet" href="mainside.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  </head>
+  <style>
+    #main-cont-log {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 30px;
+    background-color: #ffffff;
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+      width: 500px;
+      height: 30pc;
+      max-width: 90%;
+      margin-top: 10pc;
+      margin-left: 37pc;
+    }
+
+    #main-cont-log h2 {
+      color: #000000;
+      font-size: 40px;
+      margin: 0;
+    }
+
+    #main-cont-log h3 {
+      font-size: 28px;
+      color: #ffffff;
+      margin: 10px 0;
+      cursor: pointer;
+
+      transition: color 0.3s ease;
+    }
+
+    #main-cont-log h3:hover {
+      color: #004d99;
+    }
+
+    hr {
+      width: 100%;
+      height: 2px;
+      background-color: rgb(0, 88, 165);
+      border: none;
+      margin: 10px 0 20px;
+    }
+
+    #select-area {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      margin-top: 40px;
+      align-items: center;
+    }
+    #select-area h3 {
+      padding-top: 10px;
+    }
+
+
+    /* that is a login area side */
+    #studentLoginForm {
+  width: 300px;
+  margin: 0 auto;
+  padding: 30px;
+  margin-top: 120px;
+
+  border-radius: 15px;
+       background: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#studentLoginForm input[type="text"],
+#studentLoginForm input[type="password"] {
+  width: 170%;
+  padding: 12px 15px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-size: 1rem;
+  transition: border 0.3s ease;
+}
+
+#studentLoginForm input:focus {
+
+  outline: none;
+}
+
+#studentLoginForm button {
+  padding: 12px 20px;
+  background-color:none;
+  color: rgb(0, 0, 0);
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background-color 0.3s ease;
+}
+
+#studentLoginForm button:hover {
+  background-color: #ffffff;
+}
+
+#studentLoginForm .error {
+  color: red;
+  margin-top: 10px;
+  font-size: 0.95rem;
+}
+/* admin side start */
+   #adminLoginForm {
+  width: 300px;
+  margin: 0 auto;
+  padding: 30px;
+  margin-top: 120px;
+  background-color: none;
+  border-radius: 15px;
+ 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#adminLoginForm input[type="text"],
+#adminLoginForm input[type="password"] {
+  width: 170%;
+  padding: 12px 15px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-size: 1rem;
+  transition: border 0.3s ease;
+}
+
+#adminLoginForm input:focus {
+
+  outline: none;
+}
+
+#adminLoginForm button {
+  padding: 12px 20px;
+  background-color:none;
+  color: rgb(0, 0, 0);
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background-color 0.3s ease;
+}
+
+#adminLoginForm button:hover {
+  background-color: #005fa3;
+}
+
+#adminLoginForm .error {
+  color: red;
+  margin-top: 10px;
+  font-size: 0.95rem;
+}
+
+  </style>
+  <body style="  background-color: #030127;">
+    <header style="background-image: url('header-bg@2x.jpg'); background-size: cover;"></style>
+      <div id="main-header-conte">
+       
+        <img
+  id="logo"
+  src="logot.jpg"
+  alt="logo"
+width="1000px"
+height="500px"
+ 
+/>
+
+
+        <nav class="nav-links" style="margin-top: 50px;">
+          <ul>
+           
+     
+            <li  ><a   style="color: white; text-decoration: none;"    href="
+https://mail.google.com/mail/?view=cm&fs=1&to=support@infolexus.com&su=Hello&body=How%20are%20you%3F
+"
+>Support</a></li>
+           <li> <a     style="color: white; text-decoration: none;"  href=" https://mail.google.com/mail/?view=cm&fs=1&to=mani@infolexus.com&su=Hello&body=How%20are%20you%3F   ">Contact </a></li>
+          </ul>
+        </nav>
+        
+      </div>
+    </header>
+
+    <div id="main-cont-log">
+      <h2>Welcome</h2>
+
+      <h3>Login</h3>
+      <hr style="color: rgb(0, 88, 165)" />
+      <div id="select-area" style="display: flex; flex-direction: column;color: rgb(0, 0, 0);">
+        <h3 onclick="atmins()" style="color: rgb(0, 0, 0);">Admin login</h3>
+        <br />
+        <h3 onclick="stuuu()" style="color: rgb(0, 0, 0);">Student login</h3>
+      </div>
+    </div>
+
+    <!-- STUDENT LOGIN -->
+<div id="studett" style="display: none">
+  <div class="main-container">
+    <div class="side-panel">
+      <h1>Student</h1>
+    </div>
+    <form id="studentLoginForm">
+      <input type="text" id="username" placeholder="username" required /><br />
+      <input type="password" id="password" placeholder="password" required /><br />
+      <button type="submit">Login</button>
+      <p class="error" id="errorMsgStudent"></p>
+    </form>
+  </div>
+</div>
+
+<!-- ADMIN LOGIN -->
+<div id="Admins" style="display: none">
+  <div class="main-container">
+    <div class="side-panel">
+      <h1>Admin</h1>
+    </div>
+    <form id="adminLoginForm">
+      <input type="text" id="usernamee" placeholder="username" required /><br />
+      <input type="password" id="passwordd" placeholder="password" required /><br />
+      <button type="submit">Login</button>
+      <p class="error" id="errorMsgAdmin"></p>
+    </form>
+  </div>
+</div>
+
+<!-- inline js is starting -->
+    <script>
+      var a = document.getElementById("studett");
+      var b = document.getElementById("Admins");
+      var c= document.getElementById("main-cont-log");
+
+      function stuuu() {
+        a.style.display = "block";
+        b.style.display = "none";
+        c.style.display="none"
+      }
+
+      function atmins() {
+        a.style.display = "none";
+        b.style.display = "block";
+           c.style.display="none"
+      }
+
+document.addEventListener("DOMContentLoaded", function () {
+  const loginFormStudent = document.getElementById("studentLoginForm");
+  const loginFormAdmin = document.getElementById("adminLoginForm");
+
+  if (loginFormStudent) {
+    loginFormStudent.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const username = document.getElementById("username").value;
+      const password = document.getElementById("password").value;
+      const errorMsg = document.getElementById("errorMsgStudent");
+
+      if (username === "student" && password === "Stud@1234") {
+        sessionStorage.setItem("logged_in", "true");
+        window.location.href = "stud.html";
+      } else {
+        errorMsg.textContent = "Invalid Username or Password!";
+      }
+    });
+  }
+
+  if (loginFormAdmin) {
+    loginFormAdmin.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const username = document.getElementById("usernamee").value;
+      const password = document.getElementById("passwordd").value;
+      const errorMsg = document.getElementById("errorMsgAdmin");
+
+      if (username === "admin" && password === "admin@1234") {
+        sessionStorage.setItem("logged_in", "true");
+        window.location.href = "adminare.html"; // Make sure this file exists
+      } else {
+        errorMsg.textContent = "Invalid Username or Password!";
+      }
+    });
+  }
+});
+
+
+    </script>
+  </body>
+</html>

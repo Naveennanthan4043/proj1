@@ -1,0 +1,352 @@
+/* Reset default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    background-color: #030127;
+    /* optional background */
+    padding: 15px 15px;
+}
+
+#main-header-conte {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: small;
+    height: 50px;
+    color: rgb(0, 0, 0);
+    font-family: sans-serif;
+}
+
+#main-header-conte img {
+    width: 280px;
+    padding-bottom: 6px;
+    background-size: cover;
+}
+
+#logo img {
+    height: 100px;
+    /* Controls logo height */
+    width: auto;
+    /* Keeps the aspect ratio */
+    max-width: 100%;
+    /* Prevents overflow on small screens */
+    object-fit: contain;
+    /* Keeps image contained */
+}
+
+.nav-links ul {
+    display: flex;
+    list-style: none;
+    padding-top: 15px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 26px;
+    gap: 30px;
+    margin-left: 46pc;
+    color: #ffffff;
+
+}
+
+.nav-links li {
+    cursor: pointer;
+}
+
+.header-buttons {
+    display: flex;
+    gap: 10px;
+    border-radius: 8px;
+}
+
+button {
+    padding: 8px 15px 5px 15px;
+    margin-right: 20px;
+    cursor: pointer;
+    border-radius: 10px;
+    background-color: #0077cc;
+    border: none;
+}
+
+.ap button {
+    background-color: #0077cc;
+    border-color: #0077cc;
+    padding: 5px;
+
+    color: white;
+}
+
+/* nav is start */
+
+
+.login-container {
+    background-color: #9e9e9e;
+    padding: 60px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #aaa;
+    width: 600px;
+    text-align: center;
+    margin-top: 200px;
+    margin-left: 500px;
+}
+
+.login-container h2 {
+    font-size: 33px;
+    padding: 20px;
+    padding-bottom: 20px;
+}
+
+.tabs button {
+    padding: 10px;
+    margin: 5px;
+    width: 50%;
+    border: none;
+    background-color: #ddd;
+    cursor: pointer;
+}
+
+.tabs button:hover {
+    background-color: #ccc;
+}
+
+#studentLoginForm input{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+form h3 {
+    font-size: 33px;
+}
+
+#studentLoginForm  input {
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #aaa;
+    border-radius: 5px;
+}
+
+#studentLoginForm button {
+    padding: 10px;
+    background-color: #4285f4;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+/* login side */
+
+
+
+
+
+
+
+
+
+#program-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    background-color: #fff;
+    margin-top: 80px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.title {
+    text-align: center;
+    margin-left: 50px;
+    margin-bottom: 40px;
+    font-size: 2em;
+    margin-bottom: 30px;
+    color: #fd5000;
+}
+
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    margin-top: 80px;
+    gap: 20px;
+}
+
+.program-card {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.program-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.program-card h2 {
+    font-size: 20px;
+    color: #0077cc;
+    margin-bottom: 10px;
+}
+
+.program-card p {
+    font-size: 14px;
+    color: #555;
+    line-height: 1.5;
+}
+
+
+
+
+#new {
+    margin-top: 40px;
+    margin-bottom: 50px;
+    text-align: center;
+    color: #000000;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    max-width: 1000px;
+    margin: 20px auto;
+}
+
+.card {
+    background-color: rgb(205, 205, 205);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.card label {
+    font-size: 16px;
+    color: #333;
+}
+
+.card input[type="checkbox"] {
+    transform: scale(1.2);
+}
+
+.apv button {
+    display: block;
+    margin-left: 60px;
+    padding: 12px 25px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: white;
+
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+#apv button:hover {
+    background-color: #0056b3;
+    border-color: #007bff;
+
+}
+
+.message {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+#test {
+    display: none;
+}
+
+
+
+.container{
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+  margin: 0;
+  padding: 20px;
+}
+
+.container {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 800px;
+  margin: auto;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+h1 {
+  text-align: center;
+}
+
+.question {
+  margin-bottom: 20px;
+}
+
+.options label {
+  display: block;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+button {
+  display: block;
+  margin: 20px auto;
+  padding: 10px 25px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+#result {
+  text-align: center;
+  font-size: 18px;
+  margin-top: 20px;
+}
+
+
+
+
+
+ .card {
+    background: #eaeaea;
+    margin: 10px;
+    padding: 10px;
+    cursor: pointer;
+  }
+  .locked {
+    background: #ccc;
+    pointer-events: none;
+    opacity: 0.5;
+  }
+
+
+#quizSection{
+    display: flex;
+    margin-left: 28pc;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 800px;
+    min-width: 600px;
+
+}
+
+
+
+
+
+
+footer {
+       background-color: #030127;
+    color: #fff;
+    text-align: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    padding: 10px 0;
+    margin-top: 80px;
+    font-size: 6px;
+
+}
