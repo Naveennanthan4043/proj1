@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Visitor Circle</title>
+    <link rel="stylesheet" href="tem.css" />
+  </head>
+  <body>
+    <header>
+      <div id="main-header-conte">
+        <img id="logo" src="logot.jpg" alt="logo" />
+        <nav class="nav-links">
+          <ul>
+            <li>Assessments</li>
+            <li>Support</li>
+            <li>Contact</li>
+          </ul>
+        </nav>
+        <div class="header-buttons">
+          <button>logout</button>
+        </div>
+      </div>
+    </header>
+    <hr />
+
+    <section id="wel-ad">
+      <h1>👨‍💼 Admin View – Welcome to the Admin Panel</h1>
+    </section>
+    <section style="display: flex; flex-direction: row">
+      <section>
+        <div class="circle-container">
+          <div class="circle" id="progressCircle">
+            <div class="percentage" id="percentageText">0%</div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="program-section"
+        style="display: flex; flex-direction: column; height: 400px"
+      >
+        <h1 class="title">MPB Academic Programs</h1>
+
+        <div class="card-container">
+          <div class="program-card">
+            <h2>MBA.HR</h2>
+            <p>4-Year Undergraduate Program in Agricultural Sciences.</p>
+          </div>
+
+          <div class="program-card">
+            <h2>MBA.Finance</h2>
+            <p>2-Year Postgraduate Program with specializations.</p>
+          </div>
+          <div class="program-card">
+            <h2>MBA.Business Analactics</h2>
+            <p>Doctoral research in agricultural disciplines.</p>
+          </div>
+          <div class="program-card">
+            <h2>MBA.Logistics and Oparation</h2>
+            <p>Doctoral research in agricultural disciplines.</p>
+          </div>
+          <div class="program-card">
+            <h2>MPA.Marketing</h2>
+            <p>2-Year diploma for field-based agri education.</p>
+          </div>
+        </div>
+      </section>
+    </section>
+    <script>
+      // Initialize or get visit count from localStorage
+      const visitCountKey = "circle_visit_count";
+      let visitCount = localStorage.getItem(visitCountKey);
+
+      if (visitCount === null) {
+        visitCount = 1;
+      } else {
+        visitCount = parseInt(visitCount) + 1;
+      }
+
+      // Save updated visit count
+      localStorage.setItem(visitCountKey, visitCount);
+
+      // Convert visits to percentage (e.g. max 100 visits = 100%)
+      let percentage = Math.min((visitCount / 100) * 100, 100); // cap at 100%
+
+      // Update circle
+      const circle = document.getElementById("progressCircle");
+      const text = document.getElementById("percentageText");
+
+      circle.style.setProperty("--progress", `${percentage}%`);
+      text.textContent = `${Math.round(percentage)}%`;
+
+
+
+
+
+
+
+
+    </script>
+  </body>
+</html>

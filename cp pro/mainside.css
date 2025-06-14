@@ -1,0 +1,142 @@
+/* Reset default styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#main-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #f0f2f5;
+}
+
+
+
+header {
+  background-color: #030127;
+  /* optional background */
+  padding: 15px 15px;
+}
+
+#main-header-conte {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: small;
+  height: 50px;
+  color: rgb(0, 0, 0);
+  font-family: sans-serif;
+}
+
+#main-header-conte img {
+  width: 280px;
+  padding-bottom: 6px;
+  background-size: cover;
+}
+
+#logo img {
+  margin-top: 30px;
+  height: 350px;
+  /* Controls logo height */
+  width: auto;
+  /* Keeps the aspect ratio */
+  max-width: 500%;
+  /* Prevents overflow on small screens */
+  object-fit: contain;
+  /* Keeps image contained */
+}
+
+.nav-links ul {
+  display: flex;
+  list-style: none;
+  padding-top: 5px;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 26px;
+  gap: 30px;
+  margin-right: 70px;
+  color: #ffffff;
+
+}
+
+.nav-links li {
+  cursor: pointer;
+}
+
+.header-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+button {
+  padding: 8px 15px 5px 15px;
+  margin-right: 20px;
+  cursor: pointer;
+  border-radius: 10px;
+  border: none;
+}
+
+
+
+
+.main-container {
+  display: flex;
+  width: 800px;
+  height: 500px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  border-radius: 12px;
+  overflow: hidden;
+  background: linear-gradient(135deg, #010e70, #07028c);
+  margin-left: 27pc;
+  margin-top: 8pc;
+}
+
+.side-panel {
+  width: 250px;
+  background: linear-gradient(135deg, #010e70, #07028c);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+#loginForm {
+  flex: 1;
+  padding: 40px;
+  background: linear-gradient(135deg, #010e70, #07028c);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#loginForm h2 {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+#loginForm input {
+  margin-bottom: 15px;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+#loginForm button {
+  padding: 12px;
+  background: #0168dd;
+  border: none;
+  color: #fff;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+#loginForm button:hover {
+  background: #357ABD;
+}
